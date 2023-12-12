@@ -11,7 +11,7 @@ public class UserMapper implements Mapper<User, String> {
     }
 
     public UserMapper() {
-        this(",");
+        this(";");
     }
 
     @Override

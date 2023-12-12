@@ -16,7 +16,7 @@ public class UserView {
         showHelp();
         while (true) {
             String command = prompt("Введите команду: ");
-            com = Commands.valueOf(command);
+            com = Commands.valueOf(command.toUpperCase());
             if (com == Commands.EXIT) return;
             switch (com) {
                 case CREATE:
@@ -74,7 +74,6 @@ public class UserView {
             System.out.println(c);
         }
     }
-
     private User createUser() {
         String firstName = prompt("Фамилия: ");
         String lastName = prompt("Имя: ");
