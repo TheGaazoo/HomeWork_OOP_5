@@ -42,6 +42,6 @@ public class User {
 
     @Override
     public String toString() {
-        return String.format("Идентификатор пользователя: %s\nФамилия: %s,\nИмя: %s,\nНомер телефона: %s", id, firstName, lastName, phone);
+        return String.format("Идентификатор пользователя: %s\nФамилия: %s \nИмя: %s \nНомер телефона: %s", id, firstName, lastName, phone);
     }
 }

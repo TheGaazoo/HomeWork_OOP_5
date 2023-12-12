@@ -6,5 +6,6 @@ public enum Commands {
     UPDATE,
     READ_ALL,
     DELETE,
-    EXIT
+    EXIT,
+    HELP
 }

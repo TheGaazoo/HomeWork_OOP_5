@@ -13,6 +13,7 @@ public class UserView {
     }
     public void run(){
         Commands com;
+        showHelp();
         while (true) {
             String command = prompt("Введите команду: ");
             com = Commands.valueOf(command);
@@ -48,6 +49,17 @@ public class UserView {
                     userId = prompt("Введите идентификатор пользователя: ");
                     userController.deleteUser(userId);
                     break;
+                case HELP:
+                    System.out.println("--- Информация по командам записной книжки ---");
+                    System.out.println("READ - прочитать конкретную запись по идентификационному номеру.");
+                    System.out.println("CREATE - создать новую запись.");
+                    System.out.println("UPDATE - изменить запись с указанным идентификационным номером.");
+                    System.out.println("READ_ALL - вывести все записи на экран.");
+                    System.out.println("DELETE - удалить запись с указанным идентификационным номером.");
+                    System.out.println("EXIT - выйти из приложения.");
+                    System.out.println("HELP - отобразить описание команд.");
+                    break;
+
             }
         }
     }
@@ -56,6 +68,13 @@ public class UserView {
         System.out.print(message);
         return in.nextLine();
     }
+    private void showHelp() {
+        System.out.println("Список команд:");
+        for(Commands c : Commands.values()) {
+            System.out.println(c);
+        }
+    }
+
     private User createUser() {
         String firstName = prompt("Фамилия: ");
         String lastName = prompt("Имя: ");
