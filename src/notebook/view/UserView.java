@@ -1,5 +1,6 @@
 package notebook.view;
 
+import notebook.Colors;
 import notebook.controller.UserController;
 import notebook.model.User;
 import notebook.util.Commands;
@@ -15,9 +16,12 @@ public class UserView {
         Commands com;
         showHelp();
         while (true) {
-            String command = prompt("Введите команду: ");
+            String command = prompt(Colors.blue + Colors.bold +"Введите команду: " + Colors.reset);
             com = Commands.valueOf(command.toUpperCase());
-            if (com == Commands.EXIT) return;
+            if (com == Commands.EXIT) {
+                System.out.println(Colors.green + Colors.bold + Colors.italic + "Спасибо за использование нашего приложения! До свидания!" + Colors.reset);
+                return;
+            }
             switch (com) {
                 case CREATE:
                     User u = createUser();
@@ -50,14 +54,14 @@ public class UserView {
                     userController.deleteUser(userId);
                     break;
                 case HELP:
-                    System.out.println("--- Информация по командам записной книжки ---");
-                    System.out.println("READ - прочитать конкретную запись по идентификационному номеру.");
-                    System.out.println("CREATE - создать новую запись.");
-                    System.out.println("UPDATE - изменить запись с указанным идентификационным номером.");
-                    System.out.println("READ_ALL - вывести все записи на экран.");
-                    System.out.println("DELETE - удалить запись с указанным идентификационным номером.");
-                    System.out.println("EXIT - выйти из приложения.");
-                    System.out.println("HELP - отобразить описание команд.");
+                    System.out.println(Colors.green + Colors.bold + "--- Информация по командам записной книжки ---" + Colors.reset);
+                    System.out.println(Colors.cyan + Colors.bold + "READ " + Colors.reset + "- прочитать конкретную запись по идентификационному номеру.");
+                    System.out.println(Colors.cyan + Colors.bold + "CREATE " + Colors.reset + "- создать новую запись.");
+                    System.out.println(Colors.cyan + Colors.bold + "UPDATE " + Colors.reset + "- изменить запись с указанным идентификационным номером.");
+                    System.out.println(Colors.cyan + Colors.bold + "READ_ALL " + Colors.reset + "- вывести все записи на экран.");
+                    System.out.println(Colors.cyan + Colors.bold + "DELETE " + Colors.reset + "- удалить запись с указанным идентификационным номером.");
+                    System.out.println(Colors.cyan + Colors.bold + "EXIT " + Colors.reset + "- выйти из приложения.");
+                    System.out.println(Colors.cyan + Colors.bold + "HELP " + Colors.reset + "- отобразить описание команд.");
                     break;
 
             }

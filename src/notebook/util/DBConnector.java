@@ -1,5 +1,7 @@
 package notebook.util;
 
+import notebook.Colors;
+
 import java.io.File;
 
 public class DBConnector {
@@ -12,10 +14,10 @@ public class DBConnector {
         try {
             File db = new File(dbPath);
             if (db.createNewFile()) {
-                System.out.println("Файл базы данных создан!");
+                System.out.println(Colors.yellow + Colors.bold + "Файл базы данных создан!"+ Colors.reset);
             }
             else {
-                System.out.println("Файл базы данных уже существует!");
+                System.out.println(Colors.green + Colors.bold + "Файл базы данных уже существует!" + Colors.reset);
             }
         }
         catch (Exception e) {

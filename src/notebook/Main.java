@@ -5,9 +5,9 @@ import notebook.model.repository.GBRepository;
 import notebook.model.repository.impl.UserRepository;
 import notebook.util.DBConnector;
 import notebook.view.UserView;
-
 public class Main {
     public static void main(String[] args) {
+        System.out.println(Colors.red + Colors.bold + "Добро пожаловать в записную книжку!" + Colors.reset);
         DBConnector dbConnector = new DBConnector();
         dbConnector.createDB();
         GBRepository repository = new UserRepository(dbConnector);
