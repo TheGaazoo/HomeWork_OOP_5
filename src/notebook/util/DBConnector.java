@@ -4,13 +4,10 @@ import java.io.File;
 
 public class DBConnector {
     public String dbPath;
-
     public DBConnector(String dbPath) {
         this.dbPath = dbPath;
     }
-
     public DBConnector() { this("db.txt"); }
-
     public void createDB() {
         try {
             File db = new File(dbPath);

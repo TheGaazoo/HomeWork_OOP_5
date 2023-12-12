@@ -111,7 +111,6 @@ public class UserRepository implements GBRepository {
         for (User u: users) {
             lines.add(mapper.toInput(u));
         }
-
         try (FileWriter writer = new FileWriter(connector.dbPath, false)) {
             for (String line : lines) {
                 writer.write(line);
